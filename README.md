@@ -1,3 +1,10 @@
+> This branch is chao's custom version, shortly speaking it is for esp32-s2, and mapped UART to the special GPIOs that chao needs.
+
+below is the command for flash the module.
+```
+esptool.py --port /dev/ttyACM0 write_flash 0x00000 build/esp-at.bin
+```
+
 # Overview
 libat_core.a is AT Command Core, and it is the core of AT command, including the default AT instruction set, the AT command parsing, execution and responding. The lib contains 4 kinds of command, such as `AT+TEST=?`, `AT+TEST?`, `AT+TEST=“abc”` and `AT+TEST`. It supports custom AT commands based on the lib and related APIs, and ones can also define input and output medium, like uart, spi, socket, bt, etc.
 
